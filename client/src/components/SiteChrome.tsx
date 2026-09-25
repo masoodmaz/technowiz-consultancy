@@ -2,7 +2,7 @@ import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import { Link } from "wouter";
 
-const logoSrc = "/manus-storage/technowiz_anim_90x122_c128_d100_alphaon_1e11b65e.gif";
+const logoSrc = "/technowiz-logo.gif";
 const mailto = "mailto:info@technowizltd.com?subject=TechnoWiz%20website%20enquiry";
 
 const navigation = [

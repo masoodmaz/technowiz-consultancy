@@ -5,7 +5,7 @@ export { COOKIE_NAME, ONE_YEAR_MS } from "@shared/const";
  * Update `whatsAppNumber` using international digits only (no +, spaces, or punctuation).
  */
 export const contactConfig = {
-  whatsAppNumber: "441618189129",
+  whatsAppNumber: "447722087227",
   whatsAppMessage: "Hello TechnoWiz, I would like to discuss a project.",
 } as const;
 

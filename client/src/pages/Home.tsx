@@ -2,6 +2,10 @@ import { ArrowDownRight, ArrowRight, ArrowUpRight } from "lucide-react";
 import { Link } from "wouter";
 import { SectionEyebrow, SiteFooter, SiteHeader } from "@/components/SiteChrome";
 import { ServiceCard } from "@/components/ServiceCard";
+import { VideoPoster } from "@/components/VideoPoster";
+
+const heroVideoSrc = "/TIA%20-%20Introduction%20Video.mp4";
+const heroVideoPoster = "/TIA_thumbnail.png";
 
 const services = [
   ["01", "Salesforce & enterprise CRM", "Bespoke Salesforce solutions and integrations that make customer systems work harder for the business.", "/services"],
@@ -18,8 +22,16 @@ const testimonials = [
   ["Their expertise in IT consultancy and software development helped us achieve our goals faster and smarter. Professional and results-driven.", "JM", "James McQueen", "Managing Director, Stealth IT"],
 ] as const;
 
-function HeroDisc() {
-  return <div className="hp-visual" aria-hidden="true"><div className="hp-disc"><svg viewBox="0 0 520 520" preserveAspectRatio="xMidYMid slice"><g className="hp-floor"><path d="M0 330H520M0 365H520M0 405H520M260 330L-60 520M260 330L60 520M260 330L180 520M260 330L340 520M260 330L460 520M260 330L580 520"/></g><g className="hp-spires"><path className="dim" d="M76 330V230M112 330V150M148 330V263M184 330V120M220 330V200M256 330V272M292 330V175M328 330V238M364 330V135M400 330V250M436 330V175"/><path className="blue" d="M102 330V105M179 330V80M363 330V124M435 330V146"/><path className="mint" d="M72 330V195M145 330V230M217 330V170M289 330V210M361 330V182M433 330V228"/><g className="nodes"><circle cx="72" cy="195" r="4"/><circle cx="145" cy="230" r="4"/><circle cx="217" cy="170" r="4"/><circle cx="289" cy="210" r="4"/><circle cx="361" cy="182" r="4"/><circle cx="433" cy="228" r="4"/></g></g></svg></div><span className="tw-tag tw-tag--mint hp-chip">01 / Think in systems</span><div className="hp-chip-note"><span>CONCEIVE · BUILD · TRANSFORM</span>From strategy to software — one accountable team.</div></div>;
+function HeroVideo() {
+  return (
+    <div className="hp-visual hp-visual--video" aria-label="TechnoWiz video showcase">
+      <div className="video-frame video-frame--hero">
+        <VideoPoster src={heroVideoSrc} poster={heroVideoPoster} title="TechnoWiz video showcase" />
+      </div>
+      <span className="tw-tag tw-tag--mint hp-chip">01 / Think in systems</span>
+      <div className="hp-chip-note"><span>CONCEIVE · BUILD · TRANSFORM</span>From strategy to software — one accountable team.</div>
+    </div>
+  );
 }
 
 export default function Home() {
@@ -35,12 +47,14 @@ export default function Home() {
             <p className="tw-lead">Technowiz turns ambitious digital agendas into dependable systems, thoughtful software and intelligent ways of working.</p>
             <div className="hp-actions"><a href="mailto:info@technowizltd.com?subject=TechnoWiz%20website%20enquiry" className="tw-btn tw-btn--mint">Talk to an expert <ArrowRight /></a><Link href="/services" className="tw-btn tw-btn--ghost">Explore capabilities <ArrowDownRight /></Link></div>
           </div>
-          <HeroDisc />
+          <HeroVideo />
         </div>
         <div className="hp-pillars"><div className="tw-container"><span><b>01</b> Enterprise platforms</span><span><b>02</b> Human-centred delivery</span><span><b>03</b> AI-ready thinking</span></div></div>
       </section>
 
       <section className="tw-band tw-band--alt tw-section"><div className="tw-container hp-intro"><div><SectionEyebrow>Built for meaningful progress</SectionEyebrow><h2 className="tw-display tw-display--lg">Powering transformation at the point where business, systems and people meet.</h2></div><div><p>Whether you are challenging the market as a startup or streamlining a mature enterprise, our developers, designers and consultants shape the route from intent to impact.</p><Link href="/about" className="tw-link">Meet Technowiz <ArrowUpRight /></Link></div></div></section>
+
+      <section className="tw-band tw-band--soft tw-section video-showcase"><div className="tw-container video-showcase__grid"><div><SectionEyebrow>See it in motion</SectionEyebrow><h2 className="tw-display tw-display--lg">Empower your ECM Solution</h2><p className="tw-lead">Seamlessly connect ECM system to your PEGA case management, ERP, and CRM solutions into a single, unified source of truth</p></div><VideoPoster className="video-showcase__image" src="/OT-DCTM-SAP-Salesforce-PEGA.mp4" poster="/opentext-documentum-integration.jpg" title="Documentum integration hub and spoke model" /></div></section>
 
       <section className="tw-band tw-section"><div className="tw-container"><div className="hp-head"><div><SectionEyebrow>What we solve</SectionEyebrow><h2 className="tw-display tw-display--lg">Capability, made useful.</h2></div><Link href="/services" className="tw-btn tw-btn--dark">View all services <ArrowRight /></Link></div><div className="tw-services">{services.map(([number, title, description, href]) => <ServiceCard key={number} number={number} title={title} description={description} href={href} featured={number === "04"} />)}<article className="tw-card tw-card--prompt"><SectionEyebrow>Not sure where to start?</SectionEyebrow><h3>Bring the problem. We will map the route.</h3><a href="mailto:info@technowizltd.com?subject=TechnoWiz%20website%20enquiry" className="tw-btn tw-btn--dark">Book a discovery call <ArrowRight /></a></article></div></div></section>
 

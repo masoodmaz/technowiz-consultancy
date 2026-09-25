@@ -1,0 +1,16 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ring" x1="26" y1="18" x2="170" y2="182" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0D73FF"/>
+      <stop offset="1" stop-color="#0CC2F7"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="52" y1="26" x2="145" y2="160" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#EAF6FF" stop-opacity="0.7"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="200" height="200" rx="44" fill="url(#ring)"/>
+  <path d="M38 150V50C38 42.268 44.268 36 52 36H58C65.732 36 72 42.268 72 50V117.5L100 72L128 117.5V50C128 42.268 134.268 36 142 36H148C155.732 36 162 42.268 162 50V150H142V86.5L108.5 135H91.5L58 86.5V150H38Z" fill="white" fill-opacity="0.96"/>
+  <path d="M57 53C57 47.477 61.477 43 67 43H83C88.523 43 93 47.477 93 53V77.5L103 62.5C103.5 61.7 104.4 61.2 105.3 61.2H117.7C118.5 61.2 119.4 61.7 119.9 62.5L130 77.5V53C130 47.477 134.477 43 140 43H156C161.523 43 166 47.477 166 53V117.5C166 123.023 161.523 127.5 156 127.5H140C134.477 127.5 130 123.023 130 117.5V94.5L118.5 111.8C116.9 114 114 115.4 111 115.4H89C86 115.4 83.1 114 81.5 111.8L70 94.5V117.5C70 123.023 65.523 127.5 60 127.5H44C38.477 127.5 34 123.023 34 117.5V53C34 47.477 38.477 43 44 43H57Z" fill="url(#shine)" fill-opacity="0.48"/>
+</svg>
