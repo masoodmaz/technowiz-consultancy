@@ -1,0 +1,20 @@
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { Link } from "wouter";
+import { SectionEyebrow, SiteFooter, SiteHeader } from "@/components/SiteChrome";
+
+const outcomes = [
+  ["01", "Smarter test design", "Use risk, change context and product knowledge to focus coverage where it matters most."],
+  ["02", "Release confidence", "Create a living quality signal that supports rapid delivery without losing control."],
+  ["03", "Connected delivery", "Bring testing into the development lifecycle, rather than treating it as a final gate."],
+  ["04", "Governed automation", "Build guardrails for repeatable testing in environments with real operational and compliance needs."],
+] as const;
+
+export default function AITestAutomation() {
+  return <div className="tw-root"><SiteHeader /><main>
+    <section className="interior-hero interior-hero--visual" data-theme="dark"><div className="tw-container service-hero-grid"><div><SectionEyebrow>AI Test Automation</SectionEyebrow><h1 className="tw-display tw-display--xl">Quality engineering for systems that never stand still.</h1><p className="tw-lead">AI-enabled test automation helps delivery teams find the right signals, prioritise meaningful coverage and keep complex change moving safely.</p><a href="mailto:info@technowizltd.com?subject=TechnoWiz%20website%20enquiry" className="tw-btn tw-btn--mint">Discuss your test estate <ArrowRight /></a></div><div className="service-art"><img src="/manus-storage/ai-test-automation_118d25f3.png" alt="Abstract visualisation of an intelligent test automation pipeline" /></div></div></section>
+    <section className="tw-band tw-band--alt tw-section"><div className="tw-container signal-statement"><p>AI<span>I</span></p><div><SectionEyebrow>Beyond scripted testing</SectionEyebrow><h2 className="tw-display tw-display--lg">Use intelligence to improve the questions your testing asks.</h2><p>Automation succeeds when it is grounded in the product, the process and the consequences of failure. We help teams create test approaches that are deliberate, observable and easier to evolve.</p></div></div></section>
+    <section className="tw-band tw-section"><div className="tw-container"><div className="hp-head"><div><SectionEyebrow>What it enables</SectionEyebrow><h2 className="tw-display tw-display--lg">More signal. Less test noise.</h2></div><p className="hp-head__copy">From test strategy to automation architecture, our focus is on useful assurance — not automation for its own sake.</p></div><div className="tw-services outcome-grid">{outcomes.map(([number, title, detail]) => <article className="tw-card" key={number}><span className="tw-card__num">{number}</span><h3>{title}</h3><p>{detail}</p></article>)}</div></div></section>
+    <section className="tw-band tw-section" data-theme="dark"><div className="tw-container split-heading"><div><SectionEyebrow>A practical approach</SectionEyebrow><h2 className="tw-display tw-display--lg">Start with the release decisions people need to make.</h2></div><div className="tw-steps tw-steps--stack"><article className="tw-step"><span>01</span><h3>Inspect</h3><p>Map risk, release patterns, existing automation and the places teams lose confidence.</p></article><article className="tw-step"><span>02</span><h3>Design</h3><p>Define the balance of automated checks, exploratory thinking, observability and ownership.</p></article><article className="tw-step"><span>03</span><h3>Extend</h3><p>Implement sustainable automation foundations and refine them against real delivery behaviour.</p></article></div></div></section>
+    <section className="hp-close" data-theme="dark"><div className="tw-container"><div><SectionEyebrow>Testing should accelerate good decisions.</SectionEyebrow><h2 className="tw-display tw-display--lg">Design confidence into delivery.</h2></div><a href="mailto:info@technowizltd.com?subject=TechnoWiz%20website%20enquiry" className="tw-btn tw-btn--mint">Start a conversation <ArrowUpRight /></a></div></section>
+  </main><SiteFooter /></div>;
+}
