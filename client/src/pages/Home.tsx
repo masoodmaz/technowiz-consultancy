@@ -1,3 +1,4 @@
+import { createElement, useEffect } from "react";
 import { ArrowDownRight, ArrowRight, ArrowUpRight } from "lucide-react";
 import { Link } from "wouter";
 import { SectionEyebrow, SiteFooter, SiteHeader } from "@/components/SiteChrome";
@@ -35,6 +36,22 @@ function HeroVideo() {
 }
 
 export default function Home() {
+  useEffect(() => {
+    const existing = document.querySelector('script[data-elevenlabs-convai="true"]');
+    if (existing) return;
+
+    const script = document.createElement("script");
+    script.src = "https://unpkg.com/@elevenlabs/convai-widget-embed";
+    script.async = true;
+    script.type = "text/javascript";
+    script.setAttribute("data-elevenlabs-convai", "true");
+    document.body.appendChild(script);
+
+    return () => {
+      script.remove();
+    };
+  }, []);
+
   return <div className="tw-root">
     <SiteHeader theme="light" />
     <main>
@@ -66,6 +83,7 @@ export default function Home() {
 
       <section className="hp-close hp-close--soft"><div className="tw-container"><div><SectionEyebrow>Let’s work together</SectionEyebrow><h2 className="tw-display tw-display--lg">Ready to move from possibility to <em>progress?</em></h2></div><div><p className="tw-lead">Bring the right problem.</p><a href="mailto:info@technowizltd.com?subject=TechnoWiz%20website%20enquiry" className="tw-btn tw-btn--mint">Start a conversation <ArrowRight /></a></div></div></section>
     </main>
+    {createElement("elevenlabs-convai", { "agent-id": "agent_1201m3m62d06e82atvgxbhfayv21" })}
     <SiteFooter />
   </div>;
 }
