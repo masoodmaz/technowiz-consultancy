@@ -17,10 +17,10 @@ const services = [
 ] as const;
 
 const testimonials = [
-  ["Technowiz transformed our business with their expertise. Their tailored IT solutions streamlined our operations, boosted efficiency and drove growth.", "FV", "Fakruddin Vattachira", "CEO, Klenko"],
-  ["Their IT solutions were perfectly tailored to our needs, driving efficiency and innovation. A trusted partner we would recommend to any business.", "JC", "Jenice Clark", "CEO, JNC Associates"],
-  ["Their IT consultancy helped us achieve seamless operations and measurable results. Highly professional and truly transformational.", "HR", "Helen Randell", "Senior Manager, Pensions Regulator"],
-  ["Their expertise in IT consultancy and software development helped us achieve our goals faster and smarter. Professional and results-driven.", "JM", "James McQueen", "Managing Director, Stealth IT"],
+  ["Technowiz transformed our business with their expertise. Their tailored IT solutions streamlined our operations, boosted efficiency and drove growth.", "FV", "F Vattachira", "CEO, Klenko.com"],
+  ["Their IT solutions were perfectly tailored to our needs, driving efficiency and innovation. A trusted partner we would recommend to any business.", "JC", "Helen Clark", "CEO, JNC Associates"],
+  ["Their IT consultancy helped us achieve seamless operations and measurable results. Highly professional and truly transformational.", "HR", "Janice Randell", "Senior Manager, Pensions Regulator"],
+  ["Their expertise in IT consultancy and software development helped us achieve our goals faster and smarter. Professional and results-driven.", "JM", "Rowan McQueen", "Managing Director, Stealth Consulting"],
 ] as const;
 
 function HeroVideo() {
@@ -83,7 +83,12 @@ export default function Home() {
 
       <section className="hp-close hp-close--soft"><div className="tw-container"><div><SectionEyebrow>Let’s work together</SectionEyebrow><h2 className="tw-display tw-display--lg">Ready to move from possibility to <em>progress?</em></h2></div><div><p className="tw-lead">Bring the right problem.</p><a href="mailto:info@technowizltd.com?subject=TechnoWiz%20website%20enquiry" className="tw-btn tw-btn--mint">Start a conversation <ArrowRight /></a></div></div></section>
     </main>
-    {createElement("elevenlabs-convai", { "agent-id": "agent_1201m3m62d06e82atvgxbhfayv21" })}
+    {createElement("elevenlabs-convai", {
+      "agent-id": "agent_1201m3m62d06e82atvgxbhfayv21",
+      "text-contents": JSON.stringify({
+        main_label: "How can i help you?",
+      }),
+    })}
     <SiteFooter />
   </div>;
 }
