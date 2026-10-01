@@ -2,7 +2,6 @@ import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import { Link } from "wouter";
 
-const logoSrc = "/technowiz-logo.gif";
 const mailto = "mailto:info@technowizltd.com?subject=TechnoWiz%20website%20enquiry";
 
 const navigation = [
@@ -15,7 +14,6 @@ const navigation = [
 export function Brand({ footer = false, onClick }: { footer?: boolean; onClick?: () => void }) {
   return (
     <Link href="/" className="tw-brand" onClick={onClick}>
-      <img src={logoSrc} alt="TechnoWiz logo" />
       <span>
         <b>TECHNOWIZ</b>
         <small className={footer ? "tw-brand__footer-strapline" : ""}>CONCEIVE · BUILD · TRANSFORM</small>
