@@ -1,8 +1,7 @@
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import { Link } from "wouter";
-
-const mailto = "mailto:info@technowizltd.com?subject=TechnoWiz%20website%20enquiry";
+import { ContactDialog } from "@/components/ContactDialog";
 
 const navigation = [
   ["Services", "/services"],
@@ -24,6 +23,7 @@ export function Brand({ footer = false, onClick }: { footer?: boolean; onClick?:
 
 export function SiteHeader({ theme = "dark" }: { theme?: "light" | "dark" }) {
   const [open, setOpen] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
 
   return (
     <div className="site-header-shell" data-theme={theme}>
@@ -32,7 +32,13 @@ export function SiteHeader({ theme = "dark" }: { theme?: "light" | "dark" }) {
           <Brand onClick={() => setOpen(false)} />
           <nav className="tw-nav" aria-label="Primary navigation">
             {navigation.map(([label, href]) => <Link key={href} href={href}>{label}</Link>)}
-            <a href={mailto} className="tw-btn tw-btn--mint tw-btn--sm">Start a conversation <ArrowUpRight /></a>
+            <button
+              className="tw-btn tw-btn--mint tw-btn--sm"
+              type="button"
+              onClick={() => setContactOpen(true)}
+            >
+              Start a conversation <ArrowUpRight />
+            </button>
             <button className="tw-menu" type="button" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} onClick={() => setOpen((value) => !value)}>
               {open ? <X /> : <Menu />}
             </button>
@@ -42,11 +48,21 @@ export function SiteHeader({ theme = "dark" }: { theme?: "light" | "dark" }) {
           <div className="tw-mobile-drawer">
             <div className="tw-container">
               {navigation.map(([label, href]) => <Link key={href} href={href} onClick={() => setOpen(false)}>{label}</Link>)}
-              <a href={mailto} className="tw-btn tw-btn--mint" onClick={() => setOpen(false)}>Start a conversation <ArrowUpRight /></a>
+              <button
+                className="tw-btn tw-btn--mint"
+                type="button"
+                onClick={() => {
+                  setOpen(false);
+                  setContactOpen(true);
+                }}
+              >
+                Start a conversation <ArrowUpRight />
+              </button>
             </div>
           </div>
         )}
       </header>
+      <ContactDialog open={contactOpen} onOpenChange={setContactOpen} />
     </div>
   );
 }
