@@ -83,7 +83,12 @@ export default function Home() {
 
       <section className="hp-close hp-close--soft"><div className="tw-container"><div><SectionEyebrow>Let’s work together</SectionEyebrow><h2 className="tw-display tw-display--lg">Ready to move from possibility to <em>progress?</em></h2></div><div><p className="tw-lead">Bring the right problem.</p><a href="mailto:info@technowizltd.com?subject=TechnoWiz%20website%20enquiry" className="tw-btn tw-btn--mint">Start a conversation <ArrowRight /></a></div></div></section>
     </main>
-    {createElement("elevenlabs-convai", { "agent-id": "agent_1201m3m62d06e82atvgxbhfayv21" })}
+    {createElement("elevenlabs-convai", {
+      "agent-id": "agent_1201m3m62d06e82atvgxbhfayv21",
+      "text-contents": JSON.stringify({
+        main_label: "How can i help you?",
+      }),
+    })}
     <SiteFooter />
   </div>;
 }
